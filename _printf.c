@@ -6,6 +6,8 @@ int _printf(const char *format, ...)
 	type_d cases[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_int},
+		{"i", print_int},
 		{NULL, NULL}};
 	unsigned int i, j;
 	int total_p = 0;

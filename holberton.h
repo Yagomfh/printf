@@ -22,4 +22,5 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list a);
 int print_string(va_list a);
+int print_int(va_list a);
 #endif
