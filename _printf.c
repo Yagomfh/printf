@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == *cases[j].type)
 				{
 					total_p += cases[j].f(values);
-					i+=2;
+					i += 2;
 				}
 			}
 		}
