@@ -1,5 +1,8 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct form - type struct
@@ -13,7 +16,7 @@ typedef struct form
 {
 	char *type;
 	void (*f)(va_list a);
-}
+} type_d;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
