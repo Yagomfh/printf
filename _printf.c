@@ -3,7 +3,10 @@
 
 int _printf(const char *format, ...)
 {
-	type_d cases[] = {{"c", print_char},{"s", print_string}, {NULL, NULL}};
+	type_d cases[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{NULL, NULL}};
 	unsigned int i, j;
 	int total_p = 0;
 	va_list values;
