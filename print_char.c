@@ -7,9 +7,10 @@
  * Return: void
  */
 
-void print_char(va_list a)
+int print_char(va_list a)
 {
 	int tmp = va_arg(a, int);
 
 	_putchar(tmp);
+	return (1);
 }

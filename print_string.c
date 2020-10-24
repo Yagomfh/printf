@@ -1,7 +1,16 @@
 #include "holberton.h"
 
-void print_string(va_list a)
+int print_string(va_list a)
 {
 	char *tmp = va_arg(a, char*);
-	_putchar(tmp[1]);
+	int i;
+
+	i = 0;
+	while (tmp[i])
+	{
+		_putchar(tmp[i]);
+		i++;
+	}
+	printf("\nprint_string DONE");
+	return (i);
 }

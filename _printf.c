@@ -5,6 +5,7 @@ int _printf(const char *format, ...)
 {
 	type_d cases[] = {{"c", print_char},{"s", print_string}};
 	unsigned int i, j;
+	int total_p = 0;
 	va_list values;
 
 	va_start(values, format);
@@ -17,12 +18,13 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == *cases[j].type)
 				{
-					cases[j].f(values);
+					total_p += cases[j].f(values);
 					i+=2;
 				}
 			}
 		}
 		_putchar(format[i]);
+		total_p++;
 	 }
-	return (0);
+	return (total_p);
 }
