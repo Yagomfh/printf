@@ -1,18 +1,18 @@
 #include "holberton.h"
 
-int print_int(va_list a)
+int print_int(va_list b)
 {
-	int tmp = va_arg(a, int);
-	unsigned int j, len, n, i;
+	int n = va_arg(b, int);
+	unsigned int j, len, tmp, i;
 
 	j = 0;
 	len = 0;
-	if (!tmp)
+	if (!n)
 	{
 		_putchar('0');
 		return;
 	}
-	n = tmp;
+	tmp = n;
 	i = n;
 	if (n < 0)
 	{
@@ -35,5 +35,4 @@ int print_int(va_list a)
 		_putchar((i / tmp % 10) + '0');
 		tmp = tmp / 10;
 	}
-
 }

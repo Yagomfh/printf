@@ -14,18 +14,17 @@ int main(void)
 /**	unsigned int ui;
 	void *addr;
 */
-	len = 120;
+	len = 120000;
 	len2 = 4;
 
 	_printf("Let's try to printf a simple sentence.\n");
 	printf("Let's try to printf a simple sentence.\n");
-/**	ui = (unsigned int)INT_MAX + 1024;
-	addr = (void *)0x7ffe637541f0;*/
-	_printf("Length:[%d, %i]\n", len, len);
+/**	ui = (unsigned int)INT_MAX + 1024;**/
+	_printf("Length:[%d, %i]\n", (3+3), len2);
 	printf("Length:[%d, %i]\n", len2, len2);
-/**	_printf("Negative:[%d]\n", -762534);
-	printf("Negative:[%d]\n", -762534);
-	_printf("Unsigned:[%u]\n", ui);
+	_printf("Negative:[%d]\n", -2147483648);
+//	printf("Negative:[%d]\n", -2147483648);
+/**	_printf("Unsigned:[%u]\n", ui);
 	printf("Unsigned:[%u]\n", ui);
 	_printf("Unsigned octal:[%o]\n", ui);
 	printf("Unsigned octal:[%o]\n", ui);
