@@ -11,13 +11,18 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i - 1] == '%' && format[i - 2] != '\\')
+		if (format[i] == '%')
 		{
 			for (j = 0; cases[j].type != NULL; j++)
 			{
-				cases[j].f(values);
+				if (format[i + 1] == *cases[j].type)
+				{
+					cases[j].f(values);
+					i+=2;
+				}
 			}
 		}
 		_putchar(format[i]);
 	 }
+
 }
