@@ -1,30 +1,6 @@
 #include "holberton.h"
 
 /**
- * putchar_hexm - putchar hex num
- * @b: decimal to conver
- *
- * Return: void
- */
-
-void putchar_hexm(unsigned int b)
-{
-	int rem;
-
-	if (b == 0)
-	{
-		return;
-	}
-	rem = b % 16;
-	b = (b - rem) / 16;
-	putchar_hexm(b);
-	if (rem <= 9)
-		_putchar(rem + '0');
-	else
-		_putchar((rem - 10) + 'A'); 
-}
-
-/**
  * print_HEX - converts to hex
  * @a: the number to convert
  *
@@ -34,7 +10,25 @@ void putchar_hexm(unsigned int b)
 int print_hexm(va_list a)
 {
 	unsigned int tmp = va_arg(a, int);
+	int binTable[8];
+	int i = 0, j, len = 0, rem;
 
-	putchar_hexm(tmp);
-	return (0);
+	while (tmp > 0)
+	{
+		rem = tmp % 16;
+		tmp = (tmp - rem) / 16;
+		if (rem <= 9)
+			binTable[i] = '0' + rem;
+		else
+			binTable[i] = (rem - 10) + 'A';
+		i++;
+		len++;
+	}
+	j = i - 1;
+	while (j >= 0)
+	{
+		_putchar(binTable[j]);
+		j--;
+	}
+	return (len);
 }
