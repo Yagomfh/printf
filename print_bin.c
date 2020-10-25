@@ -1,5 +1,12 @@
 #include  "holberton.h"
 
+/**
+ * putchar_bin - putchar bin num
+ * @b: decimal to conver
+ *
+ * Return: void
+ */
+
 void putchar_bin(unsigned int b)
 {
 	int rem;
@@ -13,6 +20,13 @@ void putchar_bin(unsigned int b)
 	putchar_bin(b);
 	_putchar(rem + '0');
 }
+
+/**
+ * get_bin - convs dec in bin
+ * @c: decimal to convert
+ *
+ * Return: the bin num
+ */
 
 int get_bin(unsigned int c)
 {
