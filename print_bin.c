@@ -1,23 +1,26 @@
-#include "holberton.h"
+#include  "holberton.h"
 
-int bin_rec(unsigned int b)
+void putchar_bin(unsigned int b)
 {
-	int rem, c;
+	int rem;
 
 	if (b == 0)
 	{
-		_putchar('0');
-		return(0);
+		return;
 	}
-	else
-	{
-		rem = b % 2;
-		b = (b - rem) / 2;
-		c = bin_rec(b);
-		_putchar(rem);
-		return (c);
-	}
+	rem = b % 2;
+	b = (b - rem) / 2;
+	putchar_bin(b);
+	_putchar(rem + '0');
 }
+
+int get_bin(unsigned int c)
+{
+	if (c == 0)
+		return (0);
+	return (c % 2 + 10 * get_bin(c / 2));
+}
+
 /**
  * print_bin - converts to binary
  * @a: the number to convert
@@ -28,7 +31,14 @@ int bin_rec(unsigned int b)
 int print_bin(va_list a)
 {
 	unsigned int tmp = va_arg(a, int);
-	int len = bin_rec(tmp);
+	int bin = get_bin(tmp);
+	int len = 0;
 
+	putchar_bin(tmp);
+	while (bin)
+	{
+		bin = bin / 10;
+		len++;
+	}
 	return (len);
 }
