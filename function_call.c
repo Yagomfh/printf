@@ -1,5 +1,13 @@
 #include "holberton.h"
 
+/**
+ * function_call - calls a fucntion depending on char
+ * @c: char to analyse
+ * @a: argument to pass
+ *
+ * Return: # of putchars
+ */
+
 int function_call(char c, va_list a)
 {
 	type_d cases[] = {
