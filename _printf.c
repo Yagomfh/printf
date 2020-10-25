@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 		{"u", print_unsigned_int},
 		{"b", print_bin},
 		{"o", print_oct},
+		{"x", print_hex},
 		{NULL, NULL}};
 	unsigned int i, j;
 	int total_p = 0;
