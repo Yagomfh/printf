@@ -9,14 +9,10 @@
 int _printf(const char *format, ...)
 {
 	type_d cases[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"S", print_string_npc},
-		{"d", print_int},
-		{"i", print_int},
-		{"u", print_unsigned_int},
-		{"b", print_bin},
-		{"o", print_oct},
+		{"c", print_char}, {"s", print_string},
+		{"S", print_string_npc}, {"d", print_int},
+		{"i", print_int}, {"u", print_unsigned_int},
+		{"b", print_bin}, {"o", print_oct},
 		{"x", print_hex},
 		{NULL, NULL}};
 	unsigned int i, j;
@@ -25,9 +21,9 @@ int _printf(const char *format, ...)
 
 	va_start(values, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	i = 0;
+	while (format && format[i])
 	{
-
 		while (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
@@ -35,17 +31,18 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			for (j = 0; cases[j].type != NULL; j++)
+			j = 0;
+			while (cases[j].type)
 			{
-				if (format[i + 1] == *cases[j].type)
-				{
-					total_p += cases[j].f(values);
-					i += 2;
-				}
+				total_p += cases[j].f(values);
+				i += 2;
+				j++;
 			}
 		}
 		_putchar(format[i]);
 		total_p++;
+		i++;
 	}
+	va_end(values);
 	return (total_p);
 }
