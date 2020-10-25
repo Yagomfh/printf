@@ -12,12 +12,31 @@ int main(void)
 	int len;
 	int len2;
 	unsigned int ui;
+	int alen, elen;
+	char c = 'z';
 /*	void *addr;
 */
 	len = 120000;
 	len2 = 4;
 	ui = (unsigned int)INT_MAX + 1024;
 
+	printf("=====================\n");
+	printf("*****CHAR*****\n");
+	printf("=====================\n");
+	printf("Expected   : %c\n", 'a');
+	_printf("Actual     : %c\n", 'a');
+	elen = printf("Expected   : %c\n", c);
+	alen = _printf("Actual     : %c\n", c);
+	printf("Expected   : %i\n", elen);
+	printf("Actual     : %i\n", alen);
+	printf("Expected   : %cc\n", 'a');
+	_printf("Actual     : %cc\n", 'a');
+	printf("Expected   : %c\n", 53);
+	_printf("Actual     : %c\n", 53);
+	printf("Expected   : %c.\n", '\0');
+	_printf("Actual     : %c.\n", '\0');
+	printf("Expected   : %%%%%c\n", 'y');
+	_printf("Actual     : %%%%%c\n", 'y');
 	_printf("Let's try to printf a simple sentence.\n");
 	printf("Let's try to printf a simple sentence.\n");
 /**	ui = (unsigned int)INT_MAX + 1024;**/
