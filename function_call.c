@@ -19,7 +19,6 @@ int function_call(char c, va_list a)
 		{"X", print_hexm},
 		{NULL, NULL}};
 	int i = 0;
-
 	while (cases[i].type)
 	{
 		if (c == *(cases[i].type))

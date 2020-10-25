@@ -9,6 +9,7 @@
 int numlen(unsigned int n)
 {
 	int len;
+
 	for (len = 0; n != 0; n = n / 10)
 	{
 		len++;
@@ -44,38 +45,40 @@ int print_int(va_list a)
 	int len, i;
 	int *tab;
 
-	if (a == NULL)
+	int b = va_arg(a, int);
+
+	if (!b)
+	{
+		_putchar('0');
+		return (0);
+	}
+	n = b;
+	if (b == 0)
+	{
+		_putchar ('0');
+		return (1);
+	}
+	if (b < 0)
+	{
+		_putchar('-');
+	}
+	n = negtopos(n);
+	len = numlen(n);
+	tab = malloc(len * sizeof(int));
+	if (!tab)
 	{
 		return (0);
 	}
-	else
+	n = b;
+	n = negtopos(n);
+	for (i = 0; n != 0; n = n / 10)
 	{
-		int b = va_arg(a, int);
-
-		n = b;
-		if (b == 0)
-		{
-			_putchar ('0');
-			return (1);
-		}
-		if (b < 0)
-		{
-			_putchar('-');
-		}
-		n = negtopos(n);
-		len = numlen(n);
-		tab = malloc(len * sizeof(int));
-		n = b;
-		n = negtopos(n);
-		for (i = 0; n != 0; n = n / 10)
-		{
-			tab[i] = n % 10;
-			i++;
-		}
-		for (i = (len - 1); i >= 0; i--)
-		{
-			_putchar(tab[i] + '0');
-		}
+		tab[i] = n % 10;
+		i++;
+	}
+	for (i = (len - 1); i >= 0; i--)
+	{
+		_putchar(tab[i] + '0');
 	}
 	return (len);
 }
