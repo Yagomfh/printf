@@ -1,15 +1,22 @@
 #include "holberton.h"
 
+/**
+ * _printf - copy of the printf function
+ * @format: a string
+ * Return: number of char
+ **/
 
 int _printf(const char *format, ...)
 {
 	type_d cases[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"S", print_string_npc},
 		{"d", print_int},
 		{"i", print_int},
 		{"u", print_unsigned_int},
 		{"b", print_bin},
+		{"o", print_oct},
 		{NULL, NULL}};
 	unsigned int i, j;
 	int total_p = 0;

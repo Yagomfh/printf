@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * print_unsigned_int - print positive int
+ * @b: an unsigned int
+ * Return: number of digits
+ **/
+
 int print_unsigned_int(va_list b)
 {
 	unsigned int n = va_arg(b, unsigned int);

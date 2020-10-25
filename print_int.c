@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * print_int - print an integer
+ * @b: an integer
+ * Return: number of digit
+ **/
+
 int print_int(va_list b)
 {
 	int n = va_arg(b, int);
