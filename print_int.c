@@ -13,13 +13,12 @@ int print_int(va_list b)
 
 	j = 0;
 	len = 0;
-	if (!n)
-	{
-		_putchar('0');
-		return (0);
-	}
 	tmp = n;
 	i = n;
+	if (n == 0)
+	{
+		_putchar('0');
+	}
 	if (n < 0)
 	{
 		_putchar('-');
