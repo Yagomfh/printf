@@ -27,5 +27,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(values);
-	return (total_p + 1);
+	return (total_p);
 }
