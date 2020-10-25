@@ -18,6 +18,7 @@ typedef struct form
 	int (*f)(va_list a);
 } type_d;
 
+int function_call(char c, va_list a);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list a);
@@ -28,4 +29,5 @@ int print_bin(va_list a);
 int print_unsigned_int(va_list a);
 int print_oct(va_list a);
 int print_hex(va_list a);
+int print_mod(va_list a);
 #endif
