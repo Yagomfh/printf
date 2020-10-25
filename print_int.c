@@ -14,7 +14,11 @@ int print_int(va_list a)
 	int *tab;
 
 	n = b;
-
+	if (b == 0)
+	{
+		_putchar ('0');
+		return (1);
+	}
 	if (b < 0)
 	{
 		n = -b;
