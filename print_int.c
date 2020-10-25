@@ -18,7 +18,7 @@ int print_int(va_list a)
 	if (b < 0)
 	{
 		n = -b;
-		putchar('-');
+		_putchar('-');
 	}
 
 	for (len = 0; n != 0; n = n / 10)
@@ -40,10 +40,9 @@ int print_int(va_list a)
 
 	for (i = (len - 1); i >= 0; i--)
 	{
-		putchar(tab[i] + '0');
+		_putchar(tab[i] + '0');
 	}
-	putchar('\n');
+	_putchar('\n');
 
 	return (len);
 }
-
