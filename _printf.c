@@ -43,6 +43,6 @@ int _printf(const char *format, ...)
 		_putchar(format[i]);
 		total_p++;
 	}
-	va-end(values);
+	va_end(values);
 	return (total_p);
 }
