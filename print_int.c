@@ -42,7 +42,5 @@ int print_int(va_list a)
 	{
 		_putchar(tab[i] + '0');
 	}
-	_putchar('\n');
-
 	return (len);
 }
