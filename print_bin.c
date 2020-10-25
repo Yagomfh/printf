@@ -1,58 +1,23 @@
 #include  "holberton.h"
 
-/**
- * putchar_bin - putchar bin num
- * @b: decimal to conver
- *
- * Return: void
- */
-
-void putchar_bin(unsigned int b)
-{
-	int rem;
-
-	if (b == 0)
-	{
-		return;
-	}
-	rem = b % 2;
-	b = (b - rem) / 2;
-	putchar_bin(b);
-	_putchar(rem + '0');
-}
-
-/**
- * get_bin - convs dec in bin
- * @c: decimal to convert
- *
- * Return: the bin num
- */
-
-int get_bin(unsigned int c)
-{
-	if (c == 0)
-		return (0);
-	return (c % 2 + 10 * get_bin(c / 2));
-}
-
-/**
- * print_bin - converts to binary
- * @a: the number to convert
- *
- * Return: lenght of number
- */
-
 int print_bin(va_list a)
 {
 	unsigned int tmp = va_arg(a, int);
-	int bin = get_bin(tmp);
-	int len = 0;
+	int binTable[32];
+	int i = 0, j, len = 0;
 
-	putchar_bin(tmp);
-	while (bin)
+	while (tmp > 0)
 	{
-		bin = bin / 10;
+		binTable[i] = tmp % 2;
+		tmp = (tmp - tmp % 2) / 2;
+		i++;
 		len++;
+	}
+	j = i - 1;
+	while (j >= 0)
+	{
+		_putchar(binTable[j] + '0');
+		j--;
 	}
 	return (len);
 }
