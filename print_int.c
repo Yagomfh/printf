@@ -47,17 +47,16 @@ int print_int(va_list a)
 
 	int b = va_arg(a, int);
 
+	if (a == NULL)
+	{
+		return (0);
+	}
 	if (!b)
 	{
 		_putchar('0');
-		return (0);
-	}
-	n = b;
-	if (b == 0)
-	{
-		_putchar ('0');
 		return (1);
 	}
+	n = b;
 	if (b < 0)
 	{
 		_putchar('-');
