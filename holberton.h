@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * struct form - type struct
@@ -30,4 +31,6 @@ int print_unsigned_int(va_list a);
 int print_oct(va_list a);
 int print_hex(va_list a);
 int print_mod(va_list a);
+int print_hexm(va_list a);
+
 #endif

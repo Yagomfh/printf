@@ -16,6 +16,7 @@ int function_call(char c, va_list a)
 		{"i", print_int}, {"u", print_unsigned_int},
 		{"b", print_bin}, {"o", print_oct},
 		{"x", print_hex}, {"%", print_mod},
+		{"X", print_hexm},
 		{NULL, NULL}};
 	int i = 0;
 
