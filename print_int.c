@@ -10,7 +10,7 @@ int print_int(va_list b)
 	if (!n)
 	{
 		_putchar('0');
-		return;
+		return (0);
 	}
 	tmp = n;
 	i = n;
@@ -35,4 +35,5 @@ int print_int(va_list b)
 		_putchar((i / tmp % 10) + '0');
 		tmp = tmp / 10;
 	}
+	return (len);
 }
