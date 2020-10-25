@@ -20,12 +20,6 @@ int print_unsigned_int(va_list b)
 	}
 	tmp = n;
 	i = n;
-	if (n < 0)
-	{
-		_putchar('-');
-		tmp = -n;
-		i = -n;
-	}
 	while (tmp)
 	{
 		tmp = tmp / 10;
