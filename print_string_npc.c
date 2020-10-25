@@ -9,22 +9,31 @@
 int print_string_npc(va_list a)
 {
 	char *tmp = va_arg(a, char*);
-	int j;
+	int j/**temp**/;
+	char *null = "(null)";
 
 	j = 0;
-	while (tmp[j])
+	if (tmp != NULL)
 	{
-		if (tmp[j] < 32 || tmp[j] >= 127)
+		while (tmp[j])
 		{
-			_putchar ('\\');
-			_putchar ('x');
-			_putchar ((tmp[j] / 10) % 10 + '0');
+			if (tmp[j] < 32 || tmp[j] >= 127)
+			{
+			}
+			else
+			{
+				_putchar(tmp[j]);
+			}
+			j++;
 		}
-		else
+	}
+	else
+	{
+		for (j = 0; null[j] != '\0'; j++)
 		{
-			_putchar(tmp[j]);
+			_putchar(null[j]);
 		}
-		j++;
 	}
 	return (j);
+
 }
