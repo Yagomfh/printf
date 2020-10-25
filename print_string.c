@@ -13,6 +13,10 @@ int print_string(va_list a)
 
 	tmp = va_arg(a, char*);
 	j = 0;
+	if (tmp == NULL)
+	{
+		tmp = "(null)";
+	}
 	while (tmp[j])
 	{
 		_putchar(tmp[j]);
