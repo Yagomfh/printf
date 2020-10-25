@@ -8,6 +8,7 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"d", print_int},
 		{"i", print_int},
+		{"b", print_bin},
 		{NULL, NULL}};
 	unsigned int i, j;
 	int total_p = 0;
