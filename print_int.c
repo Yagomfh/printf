@@ -2,43 +2,48 @@
 
 /**
  * print_int - print an integer
- * @b: an integer
+ * @a: an integer
  * Return: number of digit
  **/
 
-int print_int(va_list b)
+int print_int(va_list a)
 {
-	int n = va_arg(b, int);
-	unsigned int j, len, tmp, i;
+	int b = va_arg(a, int);
+	unsigned int n;
+	int len, i;
+	int *tab;
 
-	j = 0;
-	len = 0;
-	tmp = n;
-	i = n;
-	if (n == 0)
+	n = b;
+
+	if (b < 0)
 	{
-		_putchar('0');
+		n = -b;
+		putchar('-');
 	}
-	if (n < 0)
+
+	for (len = 0; n != 0; n = n / 10)
 	{
-		_putchar('-');
-		tmp = -n;
-		i = -n;
-	}
-	while (tmp)
-	{
-		tmp = tmp / 10;
 		len++;
 	}
-	tmp = 1;
-	for (j = 1; j < len; j++)
+	tab = malloc(len * sizeof(int));
+	n = b;
+	if (b < 0)
 	{
-		tmp = tmp * 10;
+		n = -b;
 	}
-	for (j = 0; j < len; j++)
+
+	for (i = 0; n != 0; n = n / 10)
 	{
-		_putchar((i / tmp % 10) + '0');
-		tmp = tmp / 10;
+		tab[i] = n % 10;
+		i++;
 	}
+
+	for (i = (len - 1); i >= 0; i--)
+	{
+		putchar(tab[i] + '0');
+	}
+	putchar('\n');
+
 	return (len);
 }
+
