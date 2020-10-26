@@ -17,7 +17,7 @@ int function_call(char c, va_list a)
 		{"b", print_bin}, {"o", print_oct},
 		{"x", print_hex}, {"%", print_mod},
 		{"X", print_hexm}, {"r", print_rev},
-		{NULL, NULL}};
+		{"R", print_rot13}, {NULL, NULL}};
 	int i = 0;
 
 	while (cases[i].type)
