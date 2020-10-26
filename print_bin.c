@@ -1,5 +1,11 @@
 #include  "holberton.h"
 
+/**
+ * print_bin - print in binary
+ * @a: a int
+ * Return: length
+ **/
+
 int print_bin(va_list a)
 {
 	unsigned int tmp = va_arg(a, int);

@@ -1,11 +1,10 @@
 #include "holberton.h"
 
 /**
- * print_HEX - converts to hex
+ * print_hexm - converts to hex
  * @a: the number to convert
- *
  * Return: lenght of number
- */
+ **/
 
 int print_hexm(va_list a)
 {
