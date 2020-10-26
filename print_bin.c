@@ -9,12 +9,9 @@
 int print_bin(va_list a)
 {
 	unsigned int tmp = va_arg(a, int);
-	int *binTable;
+	int binTable[32];
 	int i = 0, j, len = 0;
 
-	binTable = malloc(32);
-	if (!binTable)
-		return (0);
 	while (tmp > 0)
 	{
 		binTable[i] = tmp % 2;
