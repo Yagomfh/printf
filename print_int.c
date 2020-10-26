@@ -54,7 +54,7 @@ int print_int(va_list a)
 	if (!b)
 	{
 		_putchar('0');
-		return (0);
+		return (1);
 	}
 	n = b;
 	if (b < 0)
