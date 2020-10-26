@@ -26,7 +26,15 @@ int function_call(char c, va_list a, char flag_c)
 	{
 		if (c == *(cases[i].type))
 		{
-			return (cases[i].f(a, flag_c));
+			if (c == 'd' && flag_c == '#')
+			{
+				return (cases[i].f(a, '\0'));
+
+			}
+			else
+			{
+				return (cases[i].f(a, flag_c));
+			}
 		}
 		i++;
 	}
