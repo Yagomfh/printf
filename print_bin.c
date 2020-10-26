@@ -9,14 +9,13 @@
 
 int print_bin(va_list a, char __attribute__((unused))flag_c)
 {
-	unsigned int tmp = va_arg(a, int);
+	int tmp = va_arg(a, int);
 	int binTable[33];
 	int i, j, len = 0;
 
 	i = 0;
 	if (tmp < 0)
 	{
-		printf("is in");
 		_putchar('%');
 		_putchar('b');
 		return (32);
