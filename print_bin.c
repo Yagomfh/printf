@@ -11,20 +11,27 @@ int print_bin(va_list a, char __attribute__((unused))flag_c)
 {
 	unsigned int tmp = va_arg(a, int);
 	int binTable[33];
-	int i = 0, j, len = 0;
+	int i, j, len = 0;
 
-	while (tmp > 0)
+	i = 0;
+	if (tmp < 0)
 	{
-		binTable[i] = tmp % 2;
-		tmp = (tmp - tmp % 2) / 2;
-		i++;
-		len++;
+		printf("is in");
+		_putchar('%');
+		_putchar('b');
+		return (32);
 	}
-	j = i - 1;
-	while (j >= 0)
+	else
 	{
-		_putchar(binTable[j] + '0');
-		j--;
+		while (tmp > 0)
+		{
+			binTable[i] = tmp % 2;
+			tmp = (tmp - tmp % 2) / 2;
+			i++;
+			len++;
+		}
+		for (j = i - 1; j >= 0; j--)
+			_putchar(binTable[j] + '0');
 	}
 	return (len);
 }
