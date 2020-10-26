@@ -11,13 +11,13 @@ int print_char(va_list a, char __attribute__((unused)) flag_c)
 {
 	int tmp = va_arg(a, int);
 
-	if (tmp >= 0 && tmp <= 127)
+	if (tmp)
 	{
-		_putchar(tmp);
-		return (1);
+		if (tmp >= 0 && tmp <= 127)
+		{
+			_putchar(tmp);
+			return (1);
+		}
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
