@@ -25,6 +25,7 @@ int function_call(char c, va_list a, char flag_c)
 	while (cases[i].type)
 	{
 		if (c == *(cases[i].type))
+		{
 			if (c == 'd' && flag_c == '#')
 			{
 				return (0);
@@ -33,6 +34,7 @@ int function_call(char c, va_list a, char flag_c)
 			{
 				return (cases[i].f(a, flag_c));
 			}
+		}
 		i++;
 	}
 	return (0);
