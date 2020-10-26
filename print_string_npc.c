@@ -2,11 +2,10 @@
 
 /**
  * equal127 - char equal to del 127
- * @s: a char
  * Return: none
  **/
 
-void equal127(char s)
+void equal127(void)
 {
 	_putchar('\\');
 	_putchar('x');
@@ -49,8 +48,7 @@ int print_string_npc(va_list a)
 		}
 		else if (tmp[j] == 127)
 		{
-			s = tmp[j];
-			equal127(s);
+			equal127();
 			len += 4;
 		}
 		else
