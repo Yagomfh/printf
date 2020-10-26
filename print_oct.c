@@ -10,7 +10,7 @@
 int print_oct(va_list a, char flag_c)
 {
 	unsigned int tmp = va_arg(a, int);
-	int binTable[11];
+	int binTable[12];
 	int i = 0, j, len = 0;
 
 	while (tmp > 0)

@@ -10,7 +10,7 @@
 int print_hex(va_list a, char flag_c)
 {
 	unsigned int tmp = va_arg(a, int);
-	int binTable[8];
+	int binTable[9];
 	int i = 0, j, len = 0, rem;
 
 	if (flag_c == '#')
