@@ -3,11 +3,11 @@
 /**
  * print_oct - converts to oct
  * @a: the number to convert
- *
+ * @flag_c: a char
  * Return: lenght of number
  */
 
-int print_oct(va_list a)
+int print_oct(va_list a, char flag_c)
 {
 	unsigned int tmp = va_arg(a, int);
 	int binTable[11];
@@ -21,6 +21,11 @@ int print_oct(va_list a)
 		len++;
 	}
 	j = i - 1;
+	if (flag_c != '\0')
+	{
+		_putchar('0');
+		len++;
+	}
 	while (j >= 0)
 	{
 		_putchar(binTable[j] + '0');

@@ -16,10 +16,11 @@ void equal127(void)
 /**
  * print_string_npc - print string non printable char
  * @a: a string
+ * @flag_c: flag char
  * Return: number of char
  **/
 
-int print_string_npc(va_list a)
+int print_string_npc(va_list a, char __attribute__((unused))flag_c)
 {
 	char *tmp = va_arg(a, char*);
 	char s;

@@ -3,10 +3,11 @@
 /**
  * print_rot13 - print string in rot13
  * @a: a string
+ * @flag_c: flag char
  * Return: lentgh of the string
  **/
 
-int print_rot13(va_list a)
+int print_rot13(va_list a, char __attribute__((unused))flag_c)
 {
 	char *s = va_arg(a, char*);
 	char *tmp;

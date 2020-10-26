@@ -3,10 +3,11 @@
 /**
  * print_string - print a string
  * @a: a string
+ * @flag_c: flag char
  * Return: number of char
  **/
 
-int print_string(va_list a)
+int print_string(va_list a, char __attribute__((unused)) flag_c)
 {
 	char *tmp;
 	int j;

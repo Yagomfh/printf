@@ -3,18 +3,19 @@
 /**
  * print_pointer - prints pointer value
  * @a: argument passed
- *
+ * @flag_c: flag char
  * Return: number of putchars
  */
 
-int print_pointer(va_list a)
+int print_pointer(va_list a, char __attribute__((unused))flag_c)
 {
-	char *tmp = va_arg(a, char*);
+	unsigned char *tmp = va_arg(a, void*);
 	int len = 0;
 
 	while (tmp[len])
 	{
-		len++;
+	_putchar(tmp[len]);
+	len++;
 	}
 	return (len);
 }

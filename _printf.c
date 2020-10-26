@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	int total_p = 0;
 	va_list values;
+	char flag;
 
 	if (format == NULL)
 		return (0);
@@ -25,7 +26,14 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			total_p += function_call(format[i], values);
+			flag = flags(format[i]);
+			if (flag == '\0')
+				total_p += function_call(format[i], values, flag);
+			else
+			{
+				i++;
+				total_p += function_call(format[i], values, flag);
+			}
 		}
 	}
 	va_end(values);

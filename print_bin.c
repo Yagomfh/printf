@@ -3,10 +3,11 @@
 /**
  * print_bin - print in binary
  * @a: a int
+ * @flag_c: flag char
  * Return: length
  **/
 
-int print_bin(va_list a)
+int print_bin(va_list a, char __attribute__((unused))flag_c)
 {
 	unsigned int tmp = va_arg(a, int);
 	int binTable[33];

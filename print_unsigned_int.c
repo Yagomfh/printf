@@ -3,10 +3,11 @@
 /**
  * print_unsigned_int - print positive int
  * @b: an unsigned int
+ * @flag_c: flag char
  * Return: number of digits
  **/
 
-int print_unsigned_int(va_list b)
+int print_unsigned_int(va_list b, char __attribute__((unused))flag_c)
 {
 	unsigned int n = va_arg(b, unsigned int);
 	unsigned int j, len, tmp, i;

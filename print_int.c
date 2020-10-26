@@ -36,10 +36,11 @@ int negtopos(int n)
 /**
  * print_int - print an integer
  * @a: an integer
+ * @flag_c: a cha: a char
  * Return: number of digit
  **/
 
-int print_int(va_list a)
+int print_int(va_list a, char flag_c)
 {
 	unsigned int n;
 	int len, i;
@@ -54,16 +55,14 @@ int print_int(va_list a)
 	}
 	n = b;
 	if (b < 0)
-	{
 		_putchar('-');
-	}
+	if (b > 0 && flag_c != '\0')
+		_putchar(flag_c);
 	n = negtopos(n);
 	len = numlen(n);
 	tab = malloc(len * sizeof(int));
 	if (!tab)
-	{
 		return (0);
-	}
 	n = b;
 	n = negtopos(n);
 	for (i = 0; n != 0; n = n / 10)
@@ -75,9 +74,10 @@ int print_int(va_list a)
 	{
 		_putchar(tab[i] + '0');
 	}
-	if (b < 0)
+	if (b < 0 && flag_c != '\0')
 	{
 		len = len + 1;
 	}
+	free(tab);
 	return (len);
 }
