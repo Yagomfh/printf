@@ -1,22 +1,4 @@
 #include "holberton.h"
-/**
-* _strlen - the length of a string
-* @s: the string
-*
-* Return: the lenght of the string
-*/
-
-int _strlen(char *s)
-{
-	int result = 0;
-
-	while (*s != '\0')
-	{
-		result++;
-		s++;
-	}
-	return (result);
-}
 
 /**
  * print_rot13 - print string in rot13
@@ -29,12 +11,12 @@ int print_rot13(va_list a, char __attribute__((unused))flag_c)
 {
 	char *s = va_arg(a, char*);
 	char *tmp;
-	int i, j, len;
+	int i, j;
 	char *alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char *rotate = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	len = _strlen(s);
-	tmp = malloc(sizeof(char) * len);
+	for (i = 0; s[i] != '\0'; i++)
+			tmp = malloc(sizeof(char) * i);
 	if (tmp == NULL)
 		return (0);
 	for (i = 0; s[i] != '\0'; i++)
