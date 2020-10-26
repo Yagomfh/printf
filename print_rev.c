@@ -12,10 +12,6 @@ int print_rev(va_list a)
 	char *tab;
 	int i, len = 0;
 
-	if (!tmp)
-	{
-		return (0);
-	}
 	for (i = 0; tmp[i] != '\0'; i++)
 	{
 		len++;
