@@ -47,10 +47,6 @@ int print_int(va_list a)
 
 	int b = va_arg(a, int);
 
-	if (a == NULL)
-	{
-		return (0);
-	}
 	if (!b)
 	{
 		_putchar('0');
