@@ -33,5 +33,6 @@ int print_oct(va_list a);
 int print_hex(va_list a);
 int print_mod(va_list a);
 int print_hexm(va_list a);
+int print_rev(va_list a);
 
 #endif
