@@ -16,8 +16,6 @@ int print_rot13(va_list a, char __attribute__((unused))flag_c)
 	char *rotate = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; s[i] != '\0'; i++)
-	tmp = malloc(sizeof(char) * i);
-	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; alpha[j] != '\0'; j++)
 		{
@@ -26,6 +24,8 @@ int print_rot13(va_list a, char __attribute__((unused))flag_c)
 				tmp[i] = rotate[j];
 				break;
 			}
+			else
+				tmp[i] = s[i];
 		}
 	}
 	for (i = 0; tmp[i] != '\0'; i++)
