@@ -21,7 +21,7 @@ int print_oct(va_list a, char flag_c)
 		len++;
 	}
 	j = i - 1;
-	if (flag_c != '\0')
+	if (flag_c == '#')
 	{
 		_putchar('0');
 		len++;

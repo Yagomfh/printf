@@ -13,7 +13,7 @@ int print_hexm(va_list a, char flag_c)
 	int binTable[8];
 	int i = 0, j, len = 0, rem;
 
-	if (flag_c != '\0')
+	if (flag_c == '#')
 	{
 		_putchar('0');
 		_putchar('X');
