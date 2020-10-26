@@ -47,7 +47,8 @@ int print_int(va_list a, char flag_c)
 	int *tab;
 
 	int b = va_arg(a, int);
-
+	if (b >= 0 && flag_c != '\0')
+		_putchar(flag_c);
 	if (!b)
 	{
 		_putchar('0');
@@ -56,8 +57,6 @@ int print_int(va_list a, char flag_c)
 	n = b;
 	if (b < 0)
 		_putchar('-');
-	if (b > 0 && flag_c != '\0')
-		_putchar(flag_c);
 	n = negtopos(n);
 	len = numlen(n);
 	tab = malloc(len * sizeof(int));
@@ -71,13 +70,11 @@ int print_int(va_list a, char flag_c)
 		i++;
 	}
 	for (i = (len - 1); i >= 0; i--)
-	{
 		_putchar(tab[i] + '0');
-	}
-	if (b < 0 && flag_c != '\0')
-	{
+	if (b < 0)
 		len = len + 1;
-	}
+	if (flag_c != '\0')
+		len++;
 	free(tab);
 	return (len);
 }
