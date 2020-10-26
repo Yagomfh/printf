@@ -8,7 +8,7 @@
 
 char flags(char a)
 {
-	char all_flags[] = {'+', ' ', '#', 'l', 'h'};
+	char all_flags[] = {'+', ' ', '#', 'l', 'h', '0'};
 	int i = 0;
 
 	while (all_flags[i])
