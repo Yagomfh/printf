@@ -9,7 +9,7 @@
 int print_bin(va_list a)
 {
 	unsigned int tmp = va_arg(a, int);
-	int binTable[32];
+	int binTable[32 + 1];
 	int i = 0, j, len = 0;
 
 	while (tmp > 0)
