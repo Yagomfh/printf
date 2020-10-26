@@ -75,5 +75,9 @@ int print_int(va_list a)
 	{
 		_putchar(tab[i] + '0');
 	}
+	if (b < 0)
+	{
+		len = len + 1;
+	}
 	return (len);
 }
