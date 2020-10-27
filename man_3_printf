@@ -1,0 +1,185 @@
+.TH PRINTF 3 "June 5, 1986"
+.AT 3
+.SH NAME
+printf \- formatted output conversion
+.SH SYNOPSIS
+.nf
+.ft B
+#include "holberton.h"
+
+int _printf(const char *\fIformat\fP \fR[\fP, \fIarg\fP\fR] ...\fP);
+.ft R
+.fi
+.SH DESCRIPTION
+.B Printf
+places output on the standard output stream
+.BR stdout .
+.PP
+Each of these functions converts, formats, and prints its arguments after
+the first under control of the first argument.
+The first argument is a character string which contains two types of objects:
+plain characters, which are simply copied to the output stream,
+and conversion specifications, each of which causes conversion and printing
+of the next successive
+.IR arg .
+.PP
+Each conversion specification is introduced by the character
+.BR % .
+The remainder of the conversion specification includes
+in the following order
+.TP
+Zero or more of following flags:
+.RS
+.TP
+# 
+character specifying that the value should be converted to an ``alternate form''.
+For 
+.BR c ,
+.BR d ,
+.BR s ,
+and
+.BR u
+conversions, this option has no effect.  For 
+.B o
+conversions, the precision of the number is increased to force the first
+character of the output string to a zero.  For 
+.BR x ( X )
+conversion, a non-zero result has the string 
+.BR 0x ( 0X )
+prepended to it.  For 
+.BR e ,
+.BR E ,
+.BR f ,
+.BR g ,
+and
+.BR G
+conversions, the result will always contain a decimal point, even if no
+digits follow the point (normally, a decimal point only appears in the
+results of those conversions if a digit follows the decimal point).  For
+.B g
+and
+.B G
+conversions, trailing zeros are not removed from the result as they
+would otherwise be.
+.TP
++ 
+character specifying that there should always be
+a sign placed before the number when using signed conversions.
+.TP
+space 
+specifying that a blank should be left before a positive number
+during a signed conversion.  A `+' overrides a space if both are used.
+.PP
+An optional digit string specifying
+.I precision
+which specifies the number of digits to appear after the
+decimal point, for e- and f-conversion, or the maximum number of characters
+to be printed from a string;
+.TP
+\(bu
+the character
+.B l
+specifying that a following
+.BR d ,
+.BR o ,
+.BR x ,
+or
+.B u
+corresponds to a long integer
+.IR arg .
+.TP
+\(bu
+a character which indicates the type of
+conversion to be applied.
+.PP
+The conversion characters
+and their meanings are
+.TP
+.B dox
+The integer
+.I arg
+is converted to decimal, octal, or
+hexadecimal notation respectively.
+.TP
+.B X
+Like
+.BR x ,
+but use upper case instead of lower case.
+.TP
+.B c
+The character
+.I arg
+is printed.
+.TP
+.B s
+.I Arg
+is taken to be a string (character pointer)
+and characters from the string are printed until
+a null character or until
+the number of characters indicated by the precision
+specification is reached;
+however if the precision is 0 or missing
+all characters up to a null are printed.
+.TP
+.B u
+The unsigned integer
+.I arg
+is converted to decimal
+and printed.
+.TP
+.B %
+Print a `%'; no argument is converted.
+.TP
+.B d
+The int
+.I arg
+is printed.
+.TP
+.B i
+Same as d.
+.TP
+.B S
+Prints the
+.I arg
+string. Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way:
+.B `\\\\\ x'
+, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+.TP
+.B p
+The address in memory of 
+.I arg
+is printed in hexadecimal.
+.TP
+.B r
+Prints the reversed string
+.TP
+.B R 
+Prints the rot13'ed string
+.SH RETURN VALUE
+Upon successful return, these functions return the number of
+characters printed (excluding the null byte used to end output to strings).
+.SH BUGS
+Some bugs might persist. But that has an explanation :)
+We started C programing language a month and half before we started this
+project. We are still beginners. 
+If you can give us the benefit of the doubt for now on, soon this printf will be as powerful as the real one! Thanks!
+.SH EXAMPLES
+To convert and print a decimal in binary
+.PP
+.RS
+_printf("%b", your_decimal_number);
+.RE
+.PP
+To print the result of a operation:
+.IP
+_printf("%d multiplied by %d makes %d", num1, num2, num1 * num2);
+.RE
+.PP
+To print the address in memory of a variable in hexadecimal:
+.IP
+void *addr = (unsigned int)INT_MAX + 1024;
+_printf("Address:[%p]\n", addr);
+.SH AUTHORS
+.B Yago Martinez-Falero Hein
+.PP
+.B Gregory Arthus
