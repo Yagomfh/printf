@@ -28,7 +28,7 @@ Output: Hello World
 ## What does this printf handdle?
 
 All features are listed in the printf_3_man.
-Simply `./man printf_3_man` in your shell.
+Simply `$ ./man printf_3_man` in your shell.
 
 ## Message to users
 
@@ -47,4 +47,4 @@ This printf was made by two students in 5 days only. With only a month and a hal
 ## Authors
 
 [Gregory Arthus](https://github.com/garthus23)
-[Yago Martinez-Falero Hein](https://github.com/yagomfh)
+ & [Yago Martinez-Falero Hein](https://github.com/yagomfh)
