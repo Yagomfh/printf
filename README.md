@@ -19,11 +19,10 @@ _printf(const char *format, ...)
 
  ```
 #include "holberton.h"
- _printf("Hello %s\n", "World");
+ _printf("Output: Hell%c %s\n", 'o', "World");
  ```
-	Output:
 ```
-Hello World
+Output: Hello World
 ```
 
 ## What does this printf handdle?
@@ -47,5 +46,5 @@ This printf was made by two students in 5 days only. With only a month and a hal
 
 ## Authors
 
-[Gregory Arthus] (https://github.com/garthus23)
-[Yago Martinez-Falero Hein] (https://github.com/yagomfh)
+[Gregory Arthus](https://github.com/garthus23)
+[Yago Martinez-Falero Hein](https://github.com/yagomfh)
