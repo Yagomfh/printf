@@ -29,9 +29,7 @@ int print_rot13(va_list a, char __attribute__((unused))flag_c)
 				break;
 			}
 			else
-			{
 				tmp[i] = s[i];
-			}
 		}
 	}
 	for (i = 0; tmp[i] != '\0'; i++)
