@@ -74,8 +74,6 @@ int print_int(va_list a, char flag_c)
 		_putchar(tab[i] + '0');
 	if (b < 0)
 		len = len + 1;
-	if (c != '\0' || c != '#')
-		len++;
 	free(tab);
 	return (len);
 }
