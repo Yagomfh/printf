@@ -6,17 +6,13 @@
  * Return: number of char
  **/
 
-
 int _printf(const char *format, ...)
 {
 	unsigned int i;
 	int total_p = 0;
 	va_list values;
 	char flag;
-	int width = 0, len = 0;
 
-	len = width;
-	width = len;
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(values, format);
@@ -32,10 +28,7 @@ int _printf(const char *format, ...)
 			i++;
 			flag = flags(format[i]);
 			if (flag == '\0')
-			{
-
 				total_p += function_call(format[i], values, flag);
-			}
 			else
 			{
 				i++;
@@ -46,3 +39,4 @@ int _printf(const char *format, ...)
 	va_end(values);
 	return (total_p);
 }
+
