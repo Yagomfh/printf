@@ -46,8 +46,8 @@ int print_int(va_list a, char flag_c)
 	int len, i;
 	int *tab;
 	char c = flag_c;
-	int b = va_arg(a, int);
 
+	int b = va_arg(a, int);
 	if (b >= 0 && (c != '\0' || c != '#'))
 		_putchar(flag_c);
 	if (!b)
@@ -74,6 +74,9 @@ int print_int(va_list a, char flag_c)
 		_putchar(tab[i] + '0');
 	if (b < 0)
 		len = len + 1;
+	if (c != '\0' || c != '#')
+		len++;
 	free(tab);
 	return (len);
 }
+
