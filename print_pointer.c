@@ -3,7 +3,6 @@
 /**
  * print_hexa - converts to hexadecimal
  * @a: the number to convert
- * @flag_c: a char
  * Return: lenght of number
  **/
 

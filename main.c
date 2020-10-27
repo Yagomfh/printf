@@ -133,7 +133,9 @@ int main(void)
 	printf("=====================\n");
 	printf("*****FLAGS*****\n");
 	printf("=====================\n");
-	printf("Expected   : %+d\n", 2143);
+	printf("Expected   : %+5.5s\n", "holberton");
+	_printf("Actual     : %12.2400d\n", 2143);
+	printf("Expected   : %d\n", 2143);
 	_printf("Actual     : %+d\n", 2143);
 	printf("Expected   : %+d\n", -2143);
 	_printf("Actual     : %+d\n", -2143);
@@ -145,6 +147,8 @@ int main(void)
 	_printf("Unsigned octal:[%#o]\n", ui);
 	printf("Unsigned hexadecimal:[%#x, %#X]\n", ui, ui);
 	_printf("Unsigned hexadecimal:[%#x, %#X]\n", ui, ui);
+	printf("Expected   : %19s\n", "holberton");
+	_printf("Actual     : %+s\n", "holberton");
 
 	return (0);
 }
