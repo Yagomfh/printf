@@ -45,8 +45,8 @@ int print_int(va_list a, char flag_c)
 	unsigned int n;
 	int len, i;
 	int *tab;
-
 	int b = va_arg(a, int);
+
 	if (!b)
 	{
 		_putchar('0');
