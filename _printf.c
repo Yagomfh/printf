@@ -34,15 +34,11 @@ int _printf(const char *format, ...)
 			if (flag == '\0')
 			{
 
-				width = calc_width(format, &i);
-				len = calc_len(format, &i);
 				total_p += function_call(format[i], values, flag);
 			}
 			else
 			{
 				i++;
-				width = calc_width(format, &i);
-				len = calc_len(format, &i);
 				total_p += function_call(format[i], values, flag);
 			}
 		}
