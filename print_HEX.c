@@ -19,9 +19,6 @@ int print_hexm(va_list a, char flag_c)
 		_putchar('X');
 		len += 2;
 	}
-	if (tmp == 0)
-		_putchar('0');
-		return (1);
 	while (tmp > 0)
 	{
 		rem = tmp % 16;

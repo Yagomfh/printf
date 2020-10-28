@@ -14,10 +14,6 @@ int print_bin(va_list a, char __attribute__((unused))flag_c)
 	int i, j, len = 0;
 
 	i = 0;
-	if (tmp == 0)
-	{
-		return (1);
-	}
 	while (tmp > 0)
 	{
 		binTable[i] = tmp % 2;

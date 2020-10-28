@@ -17,7 +17,7 @@ int print_unsigned_int(va_list b, char __attribute__((unused))flag_c)
 	if (!n)
 	{
 		_putchar('0');
-		return (1);
+		return (0);
 	}
 	tmp = n;
 	i = n;
